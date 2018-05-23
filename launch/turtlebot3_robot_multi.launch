@@ -1,0 +1,12 @@
+<launch>
+  <arg name="ns" default="robot_1" />
+  <group ns="$(arg ns)">
+    <remap from="/tf" to="tf"/>
+    <remap from="/diagnostics" to="diagnostics"/>
+    <remap from="/imu" to="imu"/>
+    <remap from="/scan" to="scan"/>
+    <remap from="/sensor_state" to="sensor_state"/>
+    <remap from="/version_info" to="version_info"/>
+    <include file="$(find turtlebot3_bringup)/launch/turtlebot3_robot.launch"/>
+  </group>
+</launch>
