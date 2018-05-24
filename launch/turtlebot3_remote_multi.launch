@@ -3,11 +3,12 @@
   <group ns="$(arg ns)">
     <remap from="/tf" to="tf"/>
     <remap from="/tf_static" to="tf_static"/>
-    <remap from="/scan" to="scan"/>
-    <remap from="/move_base_simple/goal" to="move_base_simple/goal"/>
-    <remap from="/initialpose" to="initialpose"/>
-    <remap from="/clicked_point" to="clicked_point"/>
+    <!-- rviz remaps -->
+    <!-- <remap from="/scan" to="scan"/> -->
+    <!-- <remap from="/move_base_simple/goal" to="move_base_simple/goal"/> -->
+    <!-- <remap from="/initialpose" to="initialpose"/> -->
+    <!-- <remap from="/clicked_point" to="clicked_point"/> -->
     <include file="$(find turtlebot3_bringup)/launch/turtlebot3_remote.launch"/>
-    <node pkg="rviz" type="rviz" name="rviz" args="-d $(find turtlebot3_description)/rviz/model.rviz"/>
+    <!-- <node pkg="rviz" type="rviz" name="rviz" args="-d $(find turtlebot3_description)/rviz/model.rviz"/> -->
   </group>
 </launch>
