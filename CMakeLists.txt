@@ -121,7 +121,7 @@ include_directories(
 
 ## Declare a C++ library
 # add_library(${PROJECT_NAME}
-#   src/${PROJECT_NAME}/guide_system_robot.cpp
+#   src/${PROJECT_NAME}/turtlebot3_multi.cpp
 # )
 
 ## Add cmake target dependencies of the library

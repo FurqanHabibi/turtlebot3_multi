@@ -1,0 +1,22 @@
+<launch>
+  <arg name="ns" default="robot_1"/>
+  <arg name="floor" default="1">
+  <arg name="initial_x" default="0">
+  <arg name="initial_y" default="0">
+  <arg name="initial_theta" default="0">
+  <group ns="$(arg ns)">
+    <remap from="/tf" to="tf"/>
+    <remap from="/tf_static" to="tf_static"/>
+    <remap from="/map_server/$(arg floor)/map" to="map"/>
+    <remap from="/map_server/$(arg floor)/map_metadata" to="map_metadata"/>
+    <remap from="/map_server/$(arg floor)/static_map" to="static_map"/>
+    <!-- AMCL -->
+    <include file="$(find turtlebot3_navigation)/launch/amcl.launch.xml"/>
+    <!-- Set initial pose -->
+    <node pkg="turtlebot3_multi" type="initialpose.py" name="initialpose">
+        <param name="x" value="$(arg initial_x)"/>
+        <param name="y" value="$(arg initial_y)"/>
+        <param name="theta" value="$(arg initial_theta)"/>
+    </node>
+  </group>
+</launch>
